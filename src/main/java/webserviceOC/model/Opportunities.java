@@ -1,5 +1,7 @@
 package webserviceOC.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -17,7 +19,23 @@ public class Opportunities {
 	@Column(name="title")
 	private String title;
 	
-	private Opportunities (){}
+	@Column(name="description")
+	private String description;
+	
+	@Column(name="city")
+	private String city;
+	
+	@Column(name="state")
+	private String state;
+	
+	@Column(name="openings")
+	private String openings;
+	
+	@Column(name="date_modified")
+	private Date date_modified;
+	
+	
+	public Opportunities (){}
 	
 	public long getJoborder_id() {
 		return joborder_id;
@@ -31,5 +49,45 @@ public class Opportunities {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getOpenings() {
+		return openings;
+	}
+
+	public void setOpenings(String openings) {
+		this.openings = openings;
+	}
+
+	public Date getDate_modified() {
+		return date_modified;
+	}
+
+	public void setDate_modified(Date date_modified) {
+		this.date_modified = date_modified;
 	}
 }
