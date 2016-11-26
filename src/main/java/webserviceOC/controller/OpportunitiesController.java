@@ -9,21 +9,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import webserviceOC.model.Opportunities;
+import webserviceOC.model.OpportunitiesDAO;
 
 @RestController
 @RequestMapping("/opportunities")
 public class OpportunitiesController {
 	
-//	@Autowired
-	private Opportunities opportunities;
+	private OpportunitiesDAO repo;
+	
+	@Autowired
+	public OpportunitiesController (OpportunitiesDAO repo){
+		this.repo = repo;
+	};
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public List<Opportunities> getAll(){
-		return new ArrayList<Opportunities>();
+	public Iterable getAll(){
+		return repo.findAll();
 	}
 
-//	private Opportunities opportunities(){
-//		return opportunities;
-//	};
+	
 
 }
