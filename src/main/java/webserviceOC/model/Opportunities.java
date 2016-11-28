@@ -14,7 +14,7 @@ public class Opportunities {
 	
 	@Id
 	@Column(name="joborder_id")
-	private long joborder_id;
+	private long id;
 	
 	@Column(name="title")
 	private String title;
@@ -32,16 +32,16 @@ public class Opportunities {
 	private String openings;
 	
 	@Column(name="date_modified")
-	private Date date_modified;
+	private Date dateModified;
 	
 	
 	public Opportunities (){}
 	
 	public long getJoborder_id() {
-		return joborder_id;
+		return id;
 	}
-	public void setJoborder_id(long joborder_id) {
-		this.joborder_id = joborder_id;
+	public void setJoborder_id(long id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -84,10 +84,10 @@ public class Opportunities {
 	}
 
 	public Date getDate_modified() {
-		return date_modified;
+		return dateModified;
 	}
 
-	public void setDate_modified(Date date_modified) {
-		this.date_modified = date_modified;
+	public void setDate_modified(Date dateModified) {
+		this.dateModified = dateModified;
 	}
 }
