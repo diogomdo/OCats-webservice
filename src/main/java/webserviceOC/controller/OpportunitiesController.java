@@ -55,6 +55,10 @@ public class OpportunitiesController {
 	public List<Opportunities> findOpportunity (@PathVariable Long id){
 		return repo.findById(id);
 	}
-
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/{id}/detail")
+	public List<Opportunities> findOpportunityDetail (@PathVariable Long id){
+		return repo.findOpportunityDetail(id);
+	}
 
 }

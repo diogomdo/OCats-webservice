@@ -22,6 +22,9 @@ public class Opportunities {
 	@Column(name="description")
 	private String description;
 	
+	@Column(name="company_id")
+	private String companyId;
+	
 	@Column(name="city")
 	private String city;
 	
@@ -57,6 +60,14 @@ public class Opportunities {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getName() {
+		return companyId;
+	}
+
+	public void setName(String companyId) {
+		this.companyId = companyId;
 	}
 
 	public String getCity() {
