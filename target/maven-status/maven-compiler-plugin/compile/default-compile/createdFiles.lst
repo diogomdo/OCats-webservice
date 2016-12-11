@@ -1,5 +1,6 @@
-webserviceOC\controller\MainController.class
-webserviceOC\model\Opportunities.class
-webserviceOC\Application.class
-webserviceOC\controller\OpportunitiesController.class
-webserviceOC\model\OpportunitiesDAO.class
+webserviceOC/Application.class
+webserviceOC/model/Opportunities.class
+webserviceOC/model/Company.class
+webserviceOC/controller/OpportunitiesController.class
+webserviceOC/controller/MainController.class
+webserviceOC/model/OpportunitiesDAO.class

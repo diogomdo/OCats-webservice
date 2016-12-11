@@ -2,11 +2,20 @@ package webserviceOC.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.SecondaryTable;
 
 @Entity
 @Table(name="joborder")
@@ -22,8 +31,12 @@ public class Opportunities {
 	@Column(name="description")
 	private String description;
 	
-	@Column(name="company_id")
-	private String companyId;
+	@Column(name = "company_id")
+    private String company_id;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="company_id", referencedColumnName="company_id" , insertable = false, updatable = false)
+	private Company company;
 	
 	@Column(name="city")
 	private String city;
@@ -37,16 +50,13 @@ public class Opportunities {
 	@Column(name="date_modified")
 	private Date dateModified;
 	
-	
-	public Opportunities (){}
-	
 	public long getJoborder_id() {
 		return id;
 	}
 	public void setJoborder_id(long id) {
 		this.id = id;
 	}
-
+	
 	public String getTitle() {
 		return title;
 	}
@@ -60,14 +70,6 @@ public class Opportunities {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public String getName() {
-		return companyId;
-	}
-
-	public void setName(String companyId) {
-		this.companyId = companyId;
 	}
 
 	public String getCity() {
@@ -100,5 +102,11 @@ public class Opportunities {
 
 	public void setDate_modified(Date dateModified) {
 		this.dateModified = dateModified;
+	}
+	public Company getCompany() {
+		return company;
+	}
+	public void setCompany(Company company) {
+		this.company = company;
 	}
 }
